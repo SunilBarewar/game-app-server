@@ -16,11 +16,10 @@ const PORT = process.env.PORT || 8001; //PORT
 const { mongoConnect } = require("./database/mongoDB");
 mongoConnect();
 
-
 // Use Routes
 app.use("/api", indexRoute);
-app.use(express.static(path.join(__dirname, 'public')))
-app.use('/images', express.static(path.join(__dirname, 'public/images')))
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 // Routes
 app.get("/", (req, res) => {
@@ -35,3 +34,13 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
+/**?
+ * 
+ * "image": "http://localhost:3050/images/file-image",
+        "title": "test title",
+        "desc": "test desc",
+        "ratings": 3,
+        "price": 500,
+        "category": "race"
+ */

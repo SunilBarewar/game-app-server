@@ -15,10 +15,10 @@ const postProductService = async (req, res) => {
   console.log("post product service started");
   console.log("Current working directory: " + process.cwd());
 
-  const { image, title, desc, price, category } = req.body;
+  const { imageName, title, desc, price, category } = req.body;
   try {
     const product = new Product({
-      image: `${process.env.BASE_URL}/images/${image}`, //setting BASE URL followed by image name
+      image: `${process.env.BASE_URL}/images/${imageName}`, //setting BASE URL followed by image name
       title: title,
       desc: desc,
       price: price,
